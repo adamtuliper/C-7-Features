@@ -20,11 +20,13 @@ namespace c_sharp_7.CSharp6
                 PurchaseCallBack();
             }
 
-            //Now
+            //Call if its not null
             PurchaseCallBack?.Invoke();
 
-            string customerInfo = "bip";
 
+            string customerInfo = "Jane Doe";
+
+            //Length or null
             int? length = customerInfo?.Length;
 
             if (customerInfo?.Length > 0)

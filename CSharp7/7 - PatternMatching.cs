@@ -13,6 +13,12 @@ namespace c_sharp_7.CSharp7
     }
     public class Circle : IShape
     {
+
+        public Circle(double radius)
+        {
+            Radius = radius;
+        }
+
         public double Radius { get; set; }
 
         public double GetArea()
@@ -22,6 +28,13 @@ namespace c_sharp_7.CSharp7
     }
     class Rectangle : IShape
     {
+
+        public Rectangle(double length, double height)
+        {
+            Length = length;
+            Height = height;
+        }
+
         public double Length { get; set; }
         public double Height { get; set; }
         public double GetArea()
@@ -29,7 +42,7 @@ namespace c_sharp_7.CSharp7
             return Length * Height;
         }
     }
-    class PatternMatching
+    public class PatternMatching
     {
         /* https://github.com/dotnet/roslyn/blob/future/docs/features/patterns.md
             pattern
@@ -52,13 +65,13 @@ namespace c_sharp_7.CSharp7
             switch (shape)
             {
                 case Circle c:
-                    WriteLine($"circle with radius {c.Radius}");
+                    WriteLine($"Circle with radius {c.Radius}");
                     break;
                 case Rectangle s when (s.Length == s.Height):
-                    WriteLine($"{s.Length} x {s.Height} square");
+                    WriteLine($"Square {s.Length} x {s.Height}");
                     break;
                 case Rectangle r:
-                    WriteLine($"{r.Length} x {r.Height} rectangle");
+                    WriteLine($"Rectabgle {r.Length} x {r.Height}");
                     break;
                 //case shape.GetArea() is double area && area > 5:
                 //    WriteLine($"We have an area larger than 5: {area}");
@@ -72,16 +85,18 @@ namespace c_sharp_7.CSharp7
                 
             }
         }
-        public IShape CheckShape(IShape shape)
-        {
-            return shape;
-        }
 
+
+        /// <summary>
+        /// Prints a numbe 
+        /// </summary>
+        /// <param name="o"></param>
         public void PrintStars(object o)
         {
             if (o is null) return;     // constant pattern "null"
             if (o == null) return;     // not the same - why?
-            /*
+
+            /* Ignore, future 'to investigate' note
              * Why the extra moves to memory? Seems we could just movzx eax,eax since al contains 0 or 1
                         if (o is null) return;     // constant pattern "null"
             02C4338F 8B 4D C0             mov         ecx,dword ptr [ebp-40h]  
@@ -104,23 +119,16 @@ namespace c_sharp_7.CSharp7
             02C433C2 90                   nop  
             02C433C3 E9 70 02 00 00       jmp         02C43638  
             */
-                                       //Previously valid way to get an int or string number
-                                       //and initialize string from it
+            //Previously valid way to get an int or string number
+            //and initialize string from it
+
+            //If int, write that many *s
             if (o is int)
             {
                 WriteLine(new string('*', (int)o));
             }
 
-            if (o is string)
-            {
-                int count;
-                if (int.TryParse((string)o, out count))
-                {
-                    WriteLine(new string('*', count));
-                }
-            }
-
-            //New basics
+            //also can avoid cast above and use a new var
             if (o is int i)
             {
                 WriteLine(new string('*', i));
@@ -133,22 +141,34 @@ namespace c_sharp_7.CSharp7
             }
 
 
+            //If string, parse. Note use of outvars as 'count' (could use int count as well)
+            if (o is string)
+            {
+                if (int.TryParse((string)o, out var count))
+                {
+                    WriteLine(new string('*', count));
+                }
+            }
+
+
             //But we want to be smarter about multiple types
             if (o is int j || (o is string s && int.TryParse(s, out j)))
             {
-                /* use i */
+                //note we'll always use the int value here based on expression above.
                 WriteLine(new string('*', j));
             }
 
 
-            ////Uncomment and see issue
-            //if (!(o is int i))
+            //Uncomment and see issue
+            //if (!(o is int k1))
             //{
             //    //Note this syntax will yield i never as an int, so we can't access it
-            //    WriteLine(i);
+            //    //if you uncomment you'll see compile error on k1 being unassigned, though 
+            //    //if ! is removed up top it works since the expression could evaluate to true
+            //    WriteLine(k1);
             //}
 
-            
+
         }
     }
 }

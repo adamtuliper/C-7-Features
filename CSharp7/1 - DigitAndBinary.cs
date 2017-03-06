@@ -23,6 +23,7 @@ namespace c_sharp_7.CSharp7
             Green,        //Gets 1
             Blue = 0b100  //Gets 2
         }
+
         public static void Process1()
         {
             var sb = new StringBuilder();

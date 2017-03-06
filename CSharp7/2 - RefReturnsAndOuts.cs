@@ -7,21 +7,27 @@ using static c_sharp_7.CSharp7.GiganticData;
 
 namespace c_sharp_7.CSharp7
 {
-    //Large data structure
+    //Imagine this is a large data structure with many smaller structs.
+    //Want to access without repeated allocations
     public class GiganticData
     {
         public PlayerData PlayerData;
         public EnemyData EnemyData;
     }
 
+
+
     public struct PlayerData
     {
         public int Health;
+        public int Coins;
+        public PlayerInventory Inventory;
+        public List<string> Tags;
+        public List<PowerUp> Powerups;
+        public long AntiCheatHash;
     }
-    public struct EnemyData
-    {
-        public int Health;
-    }
+
+    
 
     public class RefReturnsAndOuts
     {
@@ -55,5 +61,18 @@ namespace c_sharp_7.CSharp7
             var dataNoRef = GetPlayerDataNoRef();
         }
 
+    }
+
+    public struct PowerUp
+    {
+
+    }
+    public struct PlayerInventory
+    {
+
+    }
+    public struct EnemyData
+    {
+        public int Health;
     }
 }

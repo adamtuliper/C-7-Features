@@ -14,7 +14,7 @@ namespace c_sharp_7.CSharp7
             Console.WriteLine("What's the answer to life the universe and everything");
             var input = Console.ReadLine();
 
-            //locally scoped
+            //locally (in the function) scoped
             if (int.TryParse(input, out var answer))
             {
                 if (answer == 42)
@@ -23,8 +23,20 @@ namespace c_sharp_7.CSharp7
                 }
                 
             }
-            
-            
+
+            //available outside of if()
+            answer++;
+
+            //Using int works too
+            if (int.TryParse(input, out int secondAnswer))
+            {
+                if (secondAnswer == 42)
+                {
+                    Draw();
+                }
+
+            }
+
         }
 
 

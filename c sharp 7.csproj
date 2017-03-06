@@ -56,15 +56,15 @@
     <Compile Include="CSharp6\NameOf.cs" />
     <Compile Include="CSharp6\NullConditional.cs" />
     <Compile Include="CSharp6\UsingStatic.cs" />
-    <Compile Include="CSharp7\Deconstruct.cs" />
-    <Compile Include="CSharp7\DigitAndBinary.cs" />
-    <Compile Include="CSharp7\ExpressionBodied.cs" />
-    <Compile Include="CSharp7\LocalFunctions.cs" />
-    <Compile Include="CSharp7\OutVars.cs" />
-    <Compile Include="CSharp7\PatternMatching.cs" />
-    <Compile Include="CSharp7\RefReturnsAndOuts.cs" />
-    <Compile Include="CSharp7\ThrowExpressions.cs" />
-    <Compile Include="CSharp7\Tupler.cs" />
+    <Compile Include="CSharp7\9b - Deconstruct.cs" />
+    <Compile Include="CSharp7\1 - DigitAndBinary.cs" />
+    <Compile Include="CSharp7\3 - ExpressionBodied.cs" />
+    <Compile Include="CSharp7\5 - LocalFunctions.cs" />
+    <Compile Include="CSharp7\6 - OutVars.cs" />
+    <Compile Include="CSharp7\8 - PatternMatching.cs" />
+    <Compile Include="CSharp7\2 - RefReturnsAndOuts.cs" />
+    <Compile Include="CSharp7\4- ThrowExpressions.cs" />
+    <Compile Include="CSharp7\9a - Tupler.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

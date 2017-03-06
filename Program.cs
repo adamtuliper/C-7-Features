@@ -16,78 +16,118 @@ namespace c_sharp_7
         }
         static void Main(string[] args)
         {
+
+            //Review 1 Null Conditional
             var nullConditional = new NullConditional();
             nullConditional.PurchaseProduct();
 
-            //Binary Literal
-            DigitAndBinary.Process();
-            Task t = Tupler.Process();
-            t.Wait();
 
+            //*****************************************************
+            //1. Binary Literal
+            DigitAndBinary.Process();
+            
+            //*****************************************************
+            //2. Ref returns 
+            var refReturns = new RefReturnsAndOuts();
+            refReturns.TestRefs();
+            
+            //*****************************************************
+            //3. Expression bodied accessors, constructors, destructor/finalizer
+            //3A. C# 6 
+            var zombie = new CSharp6.ExpressionBodied6.Zombie("Fred", 30);
+            Console.WriteLine(zombie.ToString());
+
+            //3B. Note C#6 index initializer
+            List<Order> orders = new List<Order>() { new Order(), new Order(), new Order() };
+            var processor = new OrderProcessor(orders);
+
+            //*****************************************************
+            //4. Throw expressions
+            try
+            {
+                var person = new CSharp7.Person(null);
+            }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine(ex);
+            }
+
+            //*****************************************************
+            //5. Local Functions
+            int[] numbers = { 3, 8, 7, 5, 2, 1, 9, 6, 4 };
+            LocalFunctions.QuickSort(numbers, 0, numbers.Length - 1);
+            Console.WriteLine("Sorted items");
+            numbers.ToList().ForEach(o => Console.WriteLine(o));
+
+            //Ex 2
+            LocalFunctions.Fibonacci(5);
+
+
+            //*****************************************************
+            //6. Out vars
+            OutVars.Process();
+
+            //*****************************************************
+            //7. Pattern Matching
+
+            var pm = new PatternMatching();
+            pm.MatchSomething(new Circle(3.5d));
+            pm.MatchSomething(new Rectangle(2d, 4d));
+
+
+            //Int
+            pm.PrintStars(5);
+
+            //String
+            pm.PrintStars("5");
+
+            //Shape
+            pm.PrintStars(new Rectangle(3,4));
+
+
+            //*****************************************************
+            //8. Tuples
+            var t = Tupler.ProcessLanguage();
+            t.Wait();
+            
             //Literals
             var (a, b, c, c1, c2) = (1, 2, 3, 4, 5);
 
-            
+
             //Console.WriteLine($"{results.Item2}");
             var result = a + b + c;
 
-            //Deconstruction
-            var point = new Point(5, 4);
-            var (p1, p2) = point;
-
-
-
-
-
+            //Types and values
             (float i, int j, int k) = (1, 2, 3);
-            var (p, q, r) = new(int b1, int b2, int b3) { b1 = 2, b2 = 3, b3 = 4 };
+            (int p, int q, int r) theTup = (2, 3, 4);
+
+            //mutable
+            theTup = (5, 6, 7);
+
+
             //Names don't matter
-            (int x, int y, int z) = new(int b1, int b2, int b3) { b1 = 2, b2 = 3, b3 = 4 };
+            (string, string, string) stringTuple = default((string tup1, string tup2, string tup3));
 
-            var speedAndHealth = new(int speed, int health) { health = 100, speed = 10 };
 
+            //type inference
             var someFloats = (1f, 3.4f);
 
-            var newTup = new(int b1, int b2, int b3) { b1 = 2, b2 = 3, b3 = 4 };
+            //named type inference
+            var speedAndHealth = (health: 100, speed: 10);
+
+
+            (int b1, int b2, int b3) intTup = (2, 3, 4);
             //can't convert
             //(string d, string e, string f) = new(int b1, int b2, int b3) { b1 = 2, b2 = 3, b3 = 4 };
 
             var item = (num: 1f, count: 2f, name: "hello", person: new Person() { Name = "Adam" });
             item.Item1 = item.Item2 * item.Item1;
 
-            OutVars.Process();
 
-            //var exceptionFilter = new ExceptionFilters();
-            //exceptionFilter.Process();
-
-            //Real null conditional
-            switch (args?.Length)
-            {
-                case 1:
-                    //one arg passed in
-                    break;
-            }
-
-       
-
-            //Ref returns
-            var refReturns = new RefReturnsAndOuts();
-            refReturns.TestRefs();
-
-            // *****   Pattern matching 
-            var patternMatching = new PatternMatching();
-            patternMatching.MatchSomething(new Rectangle() { Height = 5, Length = 4 });
-
-            //Int
-            patternMatching.PrintStars(5);
-
-            //String
-            patternMatching.PrintStars("5");
-
-            //Shape
-            patternMatching.PrintStars(new Rectangle());
-
-
+            //8b. Deconstruction
+            var point = new Point(5, 4);
+            var (p1, p2) = point;
 
 
         }
