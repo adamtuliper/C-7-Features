@@ -57,16 +57,16 @@ namespace c_sharp_7
             
             //*****************************************************
             //3. Expression bodied accessors, constructors, destructor/finalizer
-            //3A. C# 6 
+            // C# 6 
             var zombie = new CSharp6.ExpressionBodied6.Zombie("Fred", 30);
             Console.WriteLine(zombie.ToString());
 
-            //3B. Note C#6 collection initialization
+            //3a. Note C#6 collection initialization
             List<Order> orders = new List<Order>() { new Order(), new Order(), new Order() };
             var processor = new OrderProcessor(orders);
 
-            //*****************************************************
-            //4. Throw expressions
+            //3b. Throw expressions - allow throw in expression bodied methods
+            //                        (these could be used all throughout api stubs, like reference assemblies for compilation)
             try
             {
                 var person = new CSharp7.Person(null);
@@ -78,7 +78,7 @@ namespace c_sharp_7
             }
 
             //*****************************************************
-            //5. Local Functions
+            //4. Local Functions
             int[] numbers = { 3, 8, 7, 5, 2, 1, 9, 6, 4 };
             LocalFunctions.QuickSort(numbers, 0, numbers.Length - 1);
             Console.WriteLine("Sorted items");
@@ -89,11 +89,11 @@ namespace c_sharp_7
 
 
             //*****************************************************
-            //6. Out vars
+            //5. Out vars
             OutVars.Process();
 
             //*****************************************************
-            //7. Pattern Matching
+            //6. Pattern Matching
 
             var pm = new PatternMatching();
             pm.MatchSomething(new Circle(3.5d));
@@ -111,7 +111,7 @@ namespace c_sharp_7
 
 
             //*****************************************************
-            //8. Tuples
+            //7. Tuples
             var t = Tupler.ProcessLanguage();
             t.Wait();
 
@@ -153,7 +153,7 @@ namespace c_sharp_7
             item.Item1 = item.Item2 * item.Item1;
 
 
-            //8b. Deconstruction
+            //7b. Deconstruction
             var point = new Point(5, 4);
             var (p1, p2) = point;
 

@@ -56,14 +56,14 @@
     <Compile Include="CSharp6\NullConditional.cs" />
     <Compile Include="CSharp6\UsingStatic.cs" />
     <Compile Include="CSharp7\1 - DigitAndBinary.cs" />
-    <Compile Include="CSharp7\3 - ExpressionBodied.cs" />
-    <Compile Include="CSharp7\5 - LocalFunctions.cs" />
-    <Compile Include="CSharp7\6 - OutVars.cs" />
+    <Compile Include="CSharp7\3a - ExpressionBodied.cs" />
+    <Compile Include="CSharp7\4 - LocalFunctions.cs" />
+    <Compile Include="CSharp7\5 - OutVars.cs" />
     <Compile Include="CSharp7\2 - RefReturnsAndOuts.cs" />
-    <Compile Include="CSharp7\4- ThrowExpressions.cs" />
-    <Compile Include="CSharp7\7 - PatternMatching.cs" />
-    <Compile Include="CSharp7\8a - Tupler.cs" />
-    <Compile Include="CSharp7\8b - Deconstruct.cs" />
+    <Compile Include="CSharp7\3b - ThrowExpressions.cs" />
+    <Compile Include="CSharp7\6 - PatternMatching.cs" />
+    <Compile Include="CSharp7\7a - Tupler.cs" />
+    <Compile Include="CSharp7\7b - Deconstruct.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
