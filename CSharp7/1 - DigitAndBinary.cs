@@ -55,6 +55,10 @@ namespace c_sharp_7.CSharp7
         {
             var sb = new StringBuilder();
 
+            //separator can be used in various places.
+            long age_of_universe = 13_082_000_000;
+
+            //Binary literal (with separator)
             Int32 bytes1 = 0b01001000_01100101_01101100_01101100;
             Int32 bytes2 = 0b01101111_00100000_01010111_01101111;
             Int32 bytes3 = 0b01110010_01101100_01100100;
