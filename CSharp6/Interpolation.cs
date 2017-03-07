@@ -8,7 +8,7 @@ namespace c_sharp_7.Charp6
 {
     class Interpolation
     {
-        public void DoSomething()
+        public static void InterpolateDemo()
         {
 
             string address = "123 Main st";

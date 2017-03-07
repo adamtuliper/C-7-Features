@@ -15,7 +15,7 @@ namespace c_sharp_7.CSharp7
         private Dictionary<Guid, Order> _orders = new Dictionary<Guid, Order>();
 
         //Expression bodied constructor
-        public OrderProcessor(List<Order> orders) =>  orders.ForEach(o=>  _orders.Add(o.Key, o));
+        public OrderProcessor(List<Order> orders) => orders.ForEach(o => _orders.Add(o.Key, o));
 
         //Deconstructor / finalizer can support it as well
         ~OrderProcessor() => CleanUpUnmanagedResources();
@@ -29,10 +29,25 @@ namespace c_sharp_7.CSharp7
     }
     public class Order
     {
+        private DateTime _orderDate;
         public Order()
         {
             Key = Guid.NewGuid();
+            _orderDate = DateTime.Now;
         }
+        public DateTime OrderDate
+        {
+            get => _orderDate;
+            set => _orderDate = EnsureValidDateRange(value);
+
+        }
+
+        private DateTime EnsureValidDateRange(DateTime value)
+        {
+            //assume logic to clamp date range.
+            return value;
+        }
+
         public Guid Key { get; private set; }
         public int OrderId { get; private set; }
 

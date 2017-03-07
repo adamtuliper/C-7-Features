@@ -34,7 +34,7 @@ namespace c_sharp_7.CSharp7
 
         static public void QuickSort(int[] items, int left, int right)
         {
-            // For Recusrion
+            // For Recursion
             if (left < right)
             {
                 int pivot = Partition(items, left, right);

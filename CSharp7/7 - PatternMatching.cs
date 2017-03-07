@@ -71,7 +71,7 @@ namespace c_sharp_7.CSharp7
                     WriteLine($"Square {s.Length} x {s.Height}");
                     break;
                 case Rectangle r:
-                    WriteLine($"Rectabgle {r.Length} x {r.Height}");
+                    WriteLine($"Rectangle {r.Length} x {r.Height}");
                     break;
                 //case shape.GetArea() is double area && area > 5:
                 //    WriteLine($"We have an area larger than 5: {area}");

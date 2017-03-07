@@ -21,7 +21,7 @@ namespace c_sharp_7.CSharp7
         /// <summary>
         /// Your account key goes here.
         /// </summary>
-        private const string AccountKey = "2fb915f0cc1747bd99b98148355fe177";
+        private const string AccountKey = "8139a8831c13424cae1cf26a9f8efe98 ";
 
         /// <summary>
         /// Maximum number of languages to return in language detection API.
@@ -32,14 +32,12 @@ namespace c_sharp_7.CSharp7
         public async static Task<(string keyPhrases, string language, string sentiment)> ProcessLanguage()
         {
 
-            var (s,r,w) = await MakeRequests();
-            //We now have each var to work not in a named tuple
-            Console.WriteLine($"{s} {r} {w}");
 
             //Now these are private in a tuple struct
-            (string s,string r,string w) results = await MakeRequests();
+            //(string keyPhrases, string language, string sentiment) results = await MakeRequests();
 
-            (var a, var b, var c) = await MakeRequests();
+
+            //(var a, var b, var c) = results;
 
             //No workie - as we're not creating a,b,c, we're creating a tuple named results, hence dont need internal var
             //(var a, var b, var c) results = await MakeRequests();

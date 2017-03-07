@@ -12,6 +12,8 @@ namespace c_sharp_7.CSharp6
 
         public void PurchaseProduct()
         {
+
+            //Without null conditional
             //Store purchase is done, notify caller
             if (PurchaseCallBack != null)
             {
@@ -20,21 +22,23 @@ namespace c_sharp_7.CSharp6
                 PurchaseCallBack();
             }
 
-            //Call if its not null
+            //With null conditional - call if its not null
             PurchaseCallBack?.Invoke();
 
 
             string customerInfo = "Jane Doe";
 
-            //Length or null
+            //Length or null - storing to var
             int? length = customerInfo?.Length;
 
+
+            //Direct use
             if (customerInfo?.Length > 0)
             {
-
+                Console.WriteLine($"Length:{customerInfo.Length}");
             }
 
-            //**** Also see main() for switch ******
+            //**** Also see Program.Main() for switch ******
 
             List<string> collection = null;
             var item = collection?[0];
