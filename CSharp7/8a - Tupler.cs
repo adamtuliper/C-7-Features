@@ -19,7 +19,10 @@ namespace c_sharp_7.CSharp7
         private const string BaseUrl = "https://westus.api.cognitive.microsoft.com/";
 
         /// <summary>
-        /// Your account key goes here.
+        /// Your account key goes here. This is for the text analytics service.
+        /// Use your own key. This is a demo key and will expire shortly.
+        /// As of now, you can get keys here (though that may change location) and they can take 10 mins or so to become active
+        /// https://www.microsoft.com/cognitive-services/en-us/subscriptions?displayClass=subscription-free-trials
         /// </summary>
         private const string AccountKey = "8139a8831c13424cae1cf26a9f8efe98 ";
 
@@ -33,20 +36,14 @@ namespace c_sharp_7.CSharp7
         {
 
 
-            //Now these are private in a tuple struct
-            //(string keyPhrases, string language, string sentiment) results = await MakeRequests();
-
-
-            //(var a, var b, var c) = results;
-
             //No workie - as we're not creating a,b,c, we're creating a tuple named results, hence dont need internal var
             //(var a, var b, var c) results = await MakeRequests();
+            //This would work though
+            //(string a, string b, string c) results = await MakeRequests();
 
             var result = await MakeRequests();
 
             return result;
-            //(int num, int count) = (num: 1, count: 4);
-            //int (x,y) = (num:1, sum:5);
 
         }
 

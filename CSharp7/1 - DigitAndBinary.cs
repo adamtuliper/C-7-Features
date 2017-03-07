@@ -75,7 +75,6 @@ namespace c_sharp_7.CSharp7
 
 
             Console.WriteLine(sb.ToString());
-            Console.ReadLine();
         }
 
         
