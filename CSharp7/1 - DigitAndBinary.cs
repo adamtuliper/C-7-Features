@@ -57,6 +57,7 @@ namespace c_sharp_7.CSharp7
 
             //separator can be used in various places.
             long age_of_universe = 13_082_000_000;
+            Console.WriteLine(age_of_universe);
 
             //Binary literal (with separator)
             Int32 bytes1 = 0b01001000_01100101_01101100_01101100;
