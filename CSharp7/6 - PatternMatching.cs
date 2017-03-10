@@ -62,6 +62,12 @@ namespace c_sharp_7.CSharp7
                 WriteLine($"Area is {area}");
             }
 
+            if(shape is Rectangle r)
+            {
+
+            }
+
+
             switch (shape)
             {
                 case Circle c:
