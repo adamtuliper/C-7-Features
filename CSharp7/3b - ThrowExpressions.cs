@@ -8,7 +8,6 @@ namespace c_sharp_7.CSharp7
 {
     public class Person
     {
-
         public string Name { get; }
 
         //Previously we didn't support throwing exceptions on expression bodied items.
@@ -21,5 +20,25 @@ namespace c_sharp_7.CSharp7
         }
         public string GetLastName()  => throw new NotImplementedException();
 
+
+
+
+
+
+
+
+        private ConfigResource loadedConfig = LoadConfigResourceOrDefault() ??
+            throw new InvalidOperationException("Could not load config");
+
+
+
+        private static ConfigResource LoadConfigResourceOrDefault()
+        {
+            throw new NotImplementedException();
+        }
+
+        internal class ConfigResource
+        {
+        }
     }
 }
