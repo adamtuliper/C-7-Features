@@ -62,9 +62,9 @@ namespace c_sharp_7.CSharp7
                 WriteLine($"Area is {area}");
             }
 
-            if(shape is Rectangle r)
+            if(shape is Rectangle rect)
             {
-
+                //I only care about a rectabgle
             }
 
 
@@ -135,9 +135,9 @@ namespace c_sharp_7.CSharp7
             }
 
             //also can avoid cast above and use a new var
-            if (o is int i)
+            if (o is int j)
             {
-                WriteLine(new string('*', i));
+                WriteLine(new string('*', j));
 
             }
             else
@@ -146,22 +146,28 @@ namespace c_sharp_7.CSharp7
                 return; // type pattern "int i" 
             }
 
+            //All in one
+            if (o is int i || (o is string s && int.TryParse(s, out i)))
+            {
+                WriteLine(new string('*', i));
+            }
+
 
             //If string, parse. Note use of outvars as 'count' (could use int count as well)
             if (o is string)
             {
-                if (int.TryParse((string)o, out var count))
+                if (int.TryParse((string)o, out var counter))
                 {
-                    WriteLine(new string('*', count));
+                    WriteLine(new string('*', counter));
                 }
             }
 
 
             //But we want to be smarter about multiple types
-            if (o is int j || (o is string s && int.TryParse(s, out j)))
+            if (o is int count || (o is string input && int.TryParse(input, out count)))
             {
                 //note we'll always use the int value here based on expression above.
-                WriteLine(new string('*', j));
+                WriteLine(new string('*', count));
             }
 
 

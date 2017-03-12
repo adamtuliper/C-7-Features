@@ -8,7 +8,7 @@ namespace c_sharp_7.CSharp7
 {
     public static class LocalFunctions
     {
-
+        
         //great discussion on 'cant we do something like this already'
         //https://github.com/dotnet/roslyn/issues/259
         public static int Fibonacci(int x)

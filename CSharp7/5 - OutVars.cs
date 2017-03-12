@@ -28,6 +28,20 @@ namespace c_sharp_7.CSharp7
 
             //available outside of if()
             answer++;
+
+            //Out vars can be used anywhere you need out variables
+            GetMonthAndYear(out string month, out string year);
+
+            //I don't really care about the year
+            GetMonthAndYear(out string theMonth, out _);
+        }
+
+        private static void GetMonthAndYear(out string month, out string year)
+        {
+            Console.WriteLine("Enter the month");
+            month = Console.ReadLine();
+            Console.WriteLine("Enter the year");
+            year = Console.ReadLine();
         }
 
 
