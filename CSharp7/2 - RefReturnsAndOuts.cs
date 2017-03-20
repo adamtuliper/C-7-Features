@@ -39,9 +39,11 @@ namespace c_sharp_7.CSharp7
             _data.PlayerData.Health = 0x00110011;
             _data.EnemyData.Health = 0x00EE00EE;
         }
+
         public PlayerData GetPlayerDataNoRef()
         {
-            //return a ref to an item in an array.
+            //return a copy of the struct
+            //ie normal behavior
             return _data.PlayerData;
         }
 

@@ -47,11 +47,11 @@ namespace c_sharp_7
 
 
             //*****************************************************
-            //1. Binary Literal
+            //1. Binary Literal and digit separator
             DigitAndBinary.Process();
             
             //*****************************************************
-            //2. Ref returns 
+            //2. Ref returns - pointer to a structure
             var refReturns = new RefReturnsAndOuts();
             refReturns.TestRefs();
             
@@ -65,8 +65,10 @@ namespace c_sharp_7
             List<Order> orders = new List<Order>() { new Order(), new Order(), new Order() };
             var processor = new OrderProcessor(orders);
 
-            //3b. Throw expressions - allow throw in expression bodied methods
+            //4
+            //Throw expressions - allow throw in expression bodied methods
             //                        (these could be used all throughout api stubs, like reference assemblies for compilation)
+            //Also allows null coalescing (single line function calls)
             try
             {
                 var person = new CSharp7.Person(null);
@@ -112,40 +114,48 @@ namespace c_sharp_7
 
             //*****************************************************
             //7. Tuples
-            var t = Tupler.ProcessLanguage();
-            t.Wait();
-
-            var result = t.Result;
-            Console.WriteLine($"{result.keyPhrases}\r\n{result.sentiment}\r\n{result.language}");
 
             //Literals
             var (a, b, c, c1, c2) = (1, 2, 3, 4, 5);
-
-
-            //Console.WriteLine($"{results.Item2}");
+            
+            //We have variables now
             var addThemUp = a + b + c;
 
-            //Types and values
+            //Type inference - note right hand side intellisense
             (float i, int j, int k) = (1, 2, 3);
+
+            //named
             (int p, int q, int r) theTup = (2, 3, 4);
 
-            var stats = (age:100, health:100, iq:100);
-
-            //mutable
             theTup = (5, 6, 7);
             theTup.p = 8;
 
+            //adam
+            var adam = ("adam", "m", "tuliper");
 
-            //Names don't matter
+            //123-44-1234
+            (string firstName, string middleName, string lastName) cestMoi = adam;
+
+            //If we don't care about names
             (string, string, string) stringTuple = default((string tup1, string tup2, string tup3));
+            stringTuple.Item1 = "Mary";
 
-            //type inference
-            var someFloats = (1f, 3.4f);
+            var task = Tupler.ProcessLanguage();
+            task.Wait();
+
+            var result = task.Result;
+
+            Console.WriteLine($"{result.keyPhrases}\r\n{result.sentiment}\r\n{result.language}");
+
 
             //named type inference
             var speedAndHealth = (health: 100, speed: 10);
 
-            (int b1, int b2, int b3) intTup = (2, 3, 4);
+            //This isn't meant to be hungarian notation :)
+            (int id1, int id2, int id3) t = (2, 3, 4);
+            Console.WriteLine($"{t.id1} {t.id2} {t.id3}");
+
+
             //can't convert dbl to float, and also a:1 - 'a' will be ignored
             //(int a1, float b1, int c20) conversions = (a: 1, 2d, 3);
 
@@ -153,11 +163,23 @@ namespace c_sharp_7
             item.Item1 = item.Item2 * item.Item1;
 
 
+            //Tuple compat
+            (var userName, var pass) = Tuple.Create("adam", "91281821JASJHDAHssh2#h4H#H@#Hh2h3H#H");
+
+
+            //Tuple.Create("item1", "item2", "item", "item", "item", "item", "item7", Tuple.Create("item 8"))
+            //     .Set(out var item1, out var item2, out var item3, out var item4, out var item5, out var item6, out var item7)
+            //     .Set(out var item8);
+
+
+
             //7b. Deconstruction
             var point = new Point(5, 4);
             var (p1, p2) = point;
-
-
+            
+            //Deconstruction, I only want one item
+            (int a10, _,_,_,_) = (1, 2, 3, 4, 5);
+            var (x, _) = point;
         }
     }
 }

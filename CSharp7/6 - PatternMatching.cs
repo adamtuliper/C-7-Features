@@ -11,9 +11,19 @@ namespace c_sharp_7.CSharp7
     {
         double GetArea();
     }
+
+    public struct Square
+    {
+        public double Side { get; }
+
+        public Square(double side)
+        {
+            Side = side;
+        }
+    }
+
     public class Circle : IShape
     {
-
         public Circle(double radius)
         {
             Radius = radius;
@@ -57,19 +67,41 @@ namespace c_sharp_7.CSharp7
         //ex when Length or Height doesn't exist, right click on them in: case Rectangle s when (s.Length == s.Height):
         public void MatchSomething(IShape shape)
         {
-            if (shape.GetArea() is var area)
+
+            //Previously if/is with variables
+            if (shape is Rectangle)
             {
-                WriteLine($"Area is {area}");
+                var s = shape as Rectangle;
+                var rectArea = s.GetArea();
+            }
+            else if (shape is Circle)
+            {
+                var c = shape as Circle;
+                var circleArea = c.Radius * c.Radius * Math.PI;
             }
 
-            if(shape is Rectangle rect)
+
+
+
+            if (shape is Rectangle rect)
             {
-                //I only care about a rectabgle
+                //I only care about a rectangle
+                Console.WriteLine("Rectangle");
             }
+
+            //Since is does variable 
+            if (shape.GetArea() is var theArea && theArea > 5)
+            {
+                WriteLine($"Area is {theArea}");
+            }
+
 
 
             switch (shape)
             {
+                //case Square s:
+                    //not a shape!!
+
                 case Circle c:
                     WriteLine($"Circle with radius {c.Radius}");
                     break;
@@ -79,9 +111,6 @@ namespace c_sharp_7.CSharp7
                 case Rectangle r:
                     WriteLine($"Rectangle {r.Length} x {r.Height}");
                     break;
-                //case shape.GetArea() is double area && area > 5:
-                //    WriteLine($"We have an area larger than 5: {area}");
-                //    break;
                 case null:
                     //we're null or empty
                     throw new ArgumentNullException(nameof(shape));
@@ -90,6 +119,7 @@ namespace c_sharp_7.CSharp7
                     break;
                 
             }
+            
         }
 
 

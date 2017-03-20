@@ -93,6 +93,7 @@ namespace c_sharp_7.CSharp7
 
         static async Task<String> CallEndpoint(HttpClient client, string uri, byte[] byteData)
         {
+
             using (var content = new ByteArrayContent(byteData))
             {
                 content.Headers.ContentType = new MediaTypeHeaderValue("application/json");

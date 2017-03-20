@@ -17,7 +17,8 @@ namespace c_sharp_7.CSharp7
         //Expression bodied constructor
         public OrderProcessor(List<Order> orders) => orders.ForEach(o => _orders.Add(o.Key, o));
 
-        //Deconstructor / finalizer can support it as well
+
+        //Destructor / finalizer can support it as well
         ~OrderProcessor() => CleanUpUnmanagedResources();
 
         private void CleanUpUnmanagedResources()
