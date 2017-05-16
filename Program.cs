@@ -4,6 +4,7 @@ using c_sharp_7.CSharp7;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -15,6 +16,13 @@ namespace c_sharp_7
         {
             public string Name { get; set; }
         }
+
+        //static async Task Main(string[] args)
+        //{
+        //    Console.WriteLine(await new HttpClient().GetStringAsync(args[0]));
+        //}
+
+  
         static void Main(string[] args)
         {
 
@@ -49,12 +57,12 @@ namespace c_sharp_7
             //*****************************************************
             //1. Binary Literal and digit separator
             DigitAndBinary.Process();
-            
+
             //*****************************************************
             //2. Ref returns - pointer to a structure
             var refReturns = new RefReturnsAndOuts();
             refReturns.TestRefs();
-            
+
             //*****************************************************
             //3. Expression bodied accessors, constructors, destructor/finalizer
             // C# 6 
@@ -109,7 +117,7 @@ namespace c_sharp_7
             pm.PrintStars("5");
 
             //Shape
-            pm.PrintStars(new Rectangle(3,4));
+            pm.PrintStars(new Rectangle(3, 4));
 
 
             //*****************************************************
@@ -117,7 +125,7 @@ namespace c_sharp_7
 
             //Literals
             var (a, b, c, c1, c2) = (1, 2, 3, 4, 5);
-            
+
             //We have variables now
             var addThemUp = a + b + c;
 
@@ -176,10 +184,13 @@ namespace c_sharp_7
             //7b. Deconstruction
             var point = new Point(5, 4);
             var (p1, p2) = point;
-            
+
             //Deconstruction, I only want one item
-            (int a10, _,_,_,_) = (1, 2, 3, 4, 5);
+            (int a10, _, _, _, _) = (1, 2, 3, 4, 5);
             var (x, _) = point;
+
+            //Equality - checks
+
         }
     }
 }

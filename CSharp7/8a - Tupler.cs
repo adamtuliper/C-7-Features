@@ -10,6 +10,22 @@ namespace c_sharp_7.CSharp7
 {
     public class Tupler
     {
+
+        public void Tally(IEnumerable<int> values, out int sum, out int count)
+        {
+            sum = 1;
+            count = 5;
+
+        }
+
+        public void DoTally(IEnumerable<int> myValues)
+        {
+            int s, c;
+            Tally(myValues, out s, out c);
+            Console.WriteLine($"Sum: {s}, count: {c}");
+        }
+
+        
         //in REPL to include library reference
         //#r     \c sharp 7\packages\System.ValueTuple.4.0.0-rc3-24212-01\lib\netstandard1.1\System.ValueTuple.dll
 
@@ -101,6 +117,7 @@ namespace c_sharp_7.CSharp7
                 return await response.Content.ReadAsStringAsync();
             }
         }
+
 
     }
 }
