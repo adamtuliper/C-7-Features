@@ -14,17 +14,19 @@ namespace c_sharp_7.CSharp7._1
             var tuple2 = (15, 20);
             var tuple3 = (15, 10);
 
-            if(tuple1.Equals(tuple2))
+            if (tuple1.Equals(tuple2))
             {
                 //This is true
             }
 
-            //Coming..//shallow equality
-            //if(tuple1==tuple2)
-            //{
 
-            //}
+#if CSharp_71
+            //Coming..//shallow equality checking
+            if (tuple1 == tuple2)
+            {
 
+            }
+#endif
         }
     }
 }

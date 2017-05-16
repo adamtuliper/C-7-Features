@@ -12,15 +12,13 @@ namespace c_sharp_7.CSharp7._1
         public void Run()
         {
             bool compare = false;
-            
+
             //Scenario - Figuring out the common type when between
             // *Non nullable value type T 
             // *null literal
-
-            //int? result = compare ? 1 : null;
-
-
-
+#if CSharp_71
+            int? result = compare ? 1 : null;
+#endif
 
             /*
                 This is expected to affect the following aspects of the language:
