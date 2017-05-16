@@ -67,8 +67,9 @@
     <Compile Include="CSharp7.1\limited-nullable-enhanced-common-type.cs" />
     <Compile Include="CSharp7.1\protected_and_internal.cs" />
     <Compile Include="CSharp7.1\target-typed-default.cs" />
-    <Compile Include="CSharp7.1\tuple-fresh-and-eisting-deconstruction.cs" />
     <Compile Include="CSharp7.1\tuple-projection-initializers.cs" />
+    <Compile Include="CSharp7.1\tuples-equality.cs" />
+    <Compile Include="CSharp7.1\tuple_mixing_fresh_and_existing_deconstruction.cs" />
     <Compile Include="CSharp7\1 - DigitAndBinary.cs" />
     <Compile Include="CSharp7\3 - ExpressionBodied.cs" />
     <Compile Include="CSharp7\4 - LocalFunctions.cs" />

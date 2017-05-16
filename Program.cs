@@ -120,17 +120,30 @@ namespace c_sharp_7
 
 
             //*****************************************************
-            //7. Tuples
+            //8. Tuples
+
+            //Now a valuetuple - NO GC PRESSURE. Stack based!
 
             //Lets check it out
             //https://docs.microsoft.com/en-us/dotnet/api/?view=netframework-4.6.2&term=ValueTuple
             //https://docs.microsoft.com/en-us/dotnet/api/?view=netframework-4.5&term=System.Tuple
 
-            //Literals
+
+
+            //Literals - note IL is optimized 
+            // [130 13 - 130 53]
+            // IL_01c3: ldc.i4.1
+            // IL_01c4: stloc.s a
+            // IL_01c6: ldc.i4.2
+            // IL_01c7: stloc.s b
             var (a, b, c, c1, c2) = (1, 2, 3, 4, 5);
 
             //We have variables now
             var addThemUp = a + b + c;
+
+
+            //Tuple compatibility with System.Tuple
+            (var userName, var pass) = Tuple.Create("adam", "91281821JASJHDAHssh2#h4H#H@#Hh2h3H#H");
 
             //Type inference - note right hand side intellisense
             (float i, int j, int k) = (1, 2, 3);
@@ -172,10 +185,6 @@ namespace c_sharp_7
 
             var item = (num: 1f, count: 2f, name: "hello", person: new Person() { Name = "Adam" });
             item.Item1 = item.Item2 * item.Item1;
-
-
-            //Tuple compat
-            (var userName, var pass) = Tuple.Create("adam", "91281821JASJHDAHssh2#h4H#H@#Hh2h3H#H");
 
 
             //Tuple.Create("item1", "item2", "item", "item", "item", "item", "item7", Tuple.Create("item 8"))

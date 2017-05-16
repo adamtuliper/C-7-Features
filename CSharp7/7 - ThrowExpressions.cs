@@ -25,14 +25,13 @@ namespace c_sharp_7.CSharp7
             var parts = Name.Split(' ');
             return (parts.Length > 0) ? parts[0] : throw new InvalidOperationException("No name!");
         }
+
+        //Note we use the throw null for all ref assemblies where appropriate
+        //ex https://github.com/dotnet/corefx/blob/33df5e0560f006e8298fd42b441b92b2d5eac671/src/System.Collections.Concurrent/ref/System.Collections.Concurrent.cs
         public string GetLastName()  => throw new NotImplementedException();
 
 
-
-
-
-
-
+        
 
         private ConfigResource loadedConfig = LoadConfigResourceOrDefault() ??
             throw new InvalidOperationException("Could not load config");
