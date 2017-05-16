@@ -68,16 +68,17 @@ namespace c_sharp_7.CSharp7
         public void MatchSomething(IShape shape)
         {
 
-            //Previously if/is with variables
+            // Previously on Lost & battlestar galactica....
+            // if/is with variables
             if (shape is Rectangle)
             {
-                var s = shape as Rectangle;
-                var rectArea = s.GetArea();
+                var rectangle = shape as Rectangle;
+                var rectArea = rectangle.GetArea();
             }
             else if (shape is Circle)
             {
-                var c = shape as Circle;
-                var circleArea = c.Radius * c.Radius * Math.PI;
+                var circle = shape as Circle;
+                var circleArea = circle.Radius * circle.Radius * Math.PI;
             }
 
 
@@ -86,13 +87,13 @@ namespace c_sharp_7.CSharp7
             if (shape is Rectangle rect)
             {
                 //I only care about a rectangle
-                Console.WriteLine("Rectangle");
+                Console.WriteLine($"Rectangle {rect.GetArea()}");
             }
 
             //Since is does variable 
             if (shape.GetArea() is var theArea && theArea > 5)
             {
-                WriteLine($"Area is {theArea}");
+                WriteLine($"Area is >5 {theArea}");
             }
 
 
@@ -124,7 +125,7 @@ namespace c_sharp_7.CSharp7
 
 
         /// <summary>
-        /// Prints a numbe 
+        /// Prints a number
         /// </summary>
         /// <param name="o"></param>
         public void PrintStars(object o)

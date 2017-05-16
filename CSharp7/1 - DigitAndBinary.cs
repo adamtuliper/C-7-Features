@@ -26,7 +26,12 @@ namespace c_sharp_7.CSharp7
 
         public static void Process1()
         {
+
+            //var errorCode = 0x8000ffff;
+            //throw new Exception("An unknown error has occurred");
+
             var sb = new StringBuilder();
+
             Int32 bytes1 = 0b01001000_01100101_01101100_01101100;
             Int32 bytes2 = 0b01101111_00100000_01010111_01101111;
             Int32 bytes3 = 0b01110010_01101100_01100100;

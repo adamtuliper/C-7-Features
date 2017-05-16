@@ -20,6 +20,10 @@ namespace c_sharp_7.CSharp7
 
 
 
+
+
+
+
             //locally (in the function) scoped
             //can also use: var int answer
             if (int.TryParse(input, out var answer))

@@ -10,7 +10,12 @@ namespace c_sharp_7.CSharp6
     {
         public Attendees()
         {
-            Dictionary<int, Attendee> attendees = new Dictionary<int, Attendee>
+            //Old
+            var list = new Dictionary<int, Attendee>();
+            list.Add(1029188, new Attendee() { FirstName = "Ravi", LastName = "Shankaran" });
+
+            //New
+            var attendees = new Dictionary<int, Attendee>
             {
                 [181212] = new Attendee { FirstName = "Mary", LastName = "Jones" },
                 [2121] = new Attendee { FirstName = "Doogie", LastName = "Abbott" },

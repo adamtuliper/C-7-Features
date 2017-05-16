@@ -13,7 +13,7 @@ namespace c_sharp_7.CSharp6
             //Same old
             var intList = new List<int>(5) { 1, 2, 3, 4, 5 };
 
-
+            //New
             var intList2 = new List<int>(5) { [4] = 5 };
         }
     }

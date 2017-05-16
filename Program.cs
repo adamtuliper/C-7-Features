@@ -1,5 +1,4 @@
-﻿using c_sharp_7.Charp6;
-using c_sharp_7.CSharp6;
+﻿using c_sharp_7.CSharp6;
 using c_sharp_7.CSharp7;
 using System;
 using System.Collections.Generic;
@@ -122,6 +121,10 @@ namespace c_sharp_7
 
             //*****************************************************
             //7. Tuples
+
+            //Lets check it out
+            //https://docs.microsoft.com/en-us/dotnet/api/?view=netframework-4.6.2&term=ValueTuple
+            //https://docs.microsoft.com/en-us/dotnet/api/?view=netframework-4.5&term=System.Tuple
 
             //Literals
             var (a, b, c, c1, c2) = (1, 2, 3, 4, 5);
