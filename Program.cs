@@ -16,12 +16,6 @@ namespace c_sharp_7
             public string Name { get; set; }
         }
 
-        //static async Task Main(string[] args)
-        //{
-        //    Console.WriteLine(await new HttpClient().GetStringAsync(args[0]));
-        //}
-
-  
         static void Main(string[] args)
         {
 
@@ -150,13 +144,13 @@ namespace c_sharp_7
 
             //named
             (int p, int q, int r) theTup = (2, 3, 4);
-
+            
             theTup = (5, 6, 7);
             theTup.p = 8;
 
             //adam
             var adam = ("adam", "m", "tuliper");
-
+            
             //123-44-1234
             (string firstName, string middleName, string lastName) cestMoi = adam;
 
@@ -185,7 +179,6 @@ namespace c_sharp_7
 
             var item = (num: 1f, count: 2f, name: "hello", person: new Person() { Name = "Adam" });
             item.Item1 = item.Item2 * item.Item1;
-
 
             //Tuple.Create("item1", "item2", "item", "item", "item", "item", "item7", Tuple.Create("item 8"))
             //     .Set(out var item1, out var item2, out var item3, out var item4, out var item5, out var item6, out var item7)

@@ -84,6 +84,8 @@ namespace c_sharp_7.CSharp7
         {
             //can call before defined
             return nthFactorial(n);
+
+
             int nthFactorial(int number) => (number < 2) ?
                 1 : number * nthFactorial(number - 1);
         }

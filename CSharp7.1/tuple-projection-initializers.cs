@@ -19,6 +19,7 @@ namespace c_sharp_7.CSharp7._1
             var x1 = new bip();
 
             var tuple = ((x1.f1, x1.f2) = (1, 2));
+            
 #if CSharp_71
             //inferred naming without (f1: x1.f1, f2:x1.f2)
            tuple.f1 = tuple.f2;

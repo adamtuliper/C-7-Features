@@ -31,7 +31,8 @@ namespace c_sharp_7.CSharp7
             {
                 _lastUpdate = DateTime.Now;
                 var quote = await new HttpClient().GetStringAsync("http://quotes");
-                return decimal.Parse(quote);
+                _lastQuote = decimal.Parse(quote);
+                return _lastQuote;
             }
             
         }

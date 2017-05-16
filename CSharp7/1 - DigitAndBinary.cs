@@ -26,7 +26,6 @@ namespace c_sharp_7.CSharp7
 
         public static void Process1()
         {
-
             //var errorCode = 0x8000ffff;
             //throw new Exception("An unknown error has occurred");
 

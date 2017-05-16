@@ -95,9 +95,7 @@ namespace c_sharp_7.CSharp7
             {
                 WriteLine($"Area is >5 {theArea}");
             }
-
-
-
+            
             switch (shape)
             {
                 //case Square s:
