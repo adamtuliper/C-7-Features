@@ -12,7 +12,7 @@ namespace c_sharp_7.CSharp7._1
         const int yeOldeRedundant = default(int);
 
 
-        //only C# 7.1 (change in advanced build settings)
+        //only C# 7.1 (change language version in advanced build settings)
         const int newAndShiny = default;
 
     }

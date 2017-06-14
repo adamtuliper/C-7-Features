@@ -13,8 +13,12 @@ namespace c_sharp_7.CSharp7
         private DateTime _lastUpdate;
         private decimal _lastQuote;
 
+        //Also it can be used for sync or async code ala https://stackoverflow.com/documentation/c%23/1936/c-sharp-7-0-features/28612/valuetaskt#t=201703232043300985004
         public async Task<decimal> GetStockQuoteA<T>()
         {
+            //Here we ALWAYS return a full task object.
+            //Requires heap allocation
+            //Takes 120ns with JIT
             var quote = await new HttpClient().GetStringAsync("http://quotes");
             return decimal.Parse(quote);
         }
@@ -23,7 +27,9 @@ namespace c_sharp_7.CSharp7
 
         public async ValueTask<decimal> GetStockQuoteB<T>()
         {
-            if (DateTime.Now.Subtract(_lastUpdate).TotalMilliseconds<2000)
+            //No heap allocation if the result is known synchronously (here it is)
+            //Takes 65ns with JIT
+            if (DateTime.Now.Subtract(_lastUpdate).TotalMilliseconds < 2000)
             {
                 return _lastQuote;
             }
@@ -34,7 +40,7 @@ namespace c_sharp_7.CSharp7
                 _lastQuote = decimal.Parse(quote);
                 return _lastQuote;
             }
-            
+
         }
 
 
