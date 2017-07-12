@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,12 +24,18 @@ namespace c_sharp_7.CSharp7
         {
             if (x < 0) throw new ArgumentException("Less negativity please!", nameof(x));
 
+      
 
             //Note this is a value on the tuple
             return Fib(x).current;
 
+            //Note variables are available
+            bool processed = false;
+
             (int current, int previous) Fib(int i)
             {
+                Debug.WriteLine($"Processed:{processed}");
+                System.Diagnostics.Debug.WriteLine(x);
                 if (i == 0) return (1, 0);
                 Console.WriteLine($"Calling with {i-1}");
                 var (p, pp) = Fib(i - 1);

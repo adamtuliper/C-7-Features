@@ -22,6 +22,13 @@ namespace c_sharp_7.CSharp7
             x = X;
             y = Y;
         }
+
+        public void Deconstruct(out int x, out int y, out int q)
+        {
+            x = X;
+            y = Y;
+            q = 5;
+        }
     }
 
 }

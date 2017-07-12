@@ -15,7 +15,7 @@ namespace c_sharp_7.CSharp7
         private Dictionary<Guid, Order> _orders = new Dictionary<Guid, Order>();
 
         //Expression bodied constructor
-        public OrderProcessor(List<Order> orders) => orders.ForEach(o => _orders.Add(o.Key, o));
+        public OrderProcessor(List<Order> orders)  => orders.ForEach(o => _orders.Add(o.Key, o));
 
 
         //Destructor / finalizer can support it as well

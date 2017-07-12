@@ -89,13 +89,13 @@ namespace c_sharp_7.CSharp7
                 //I only care about a rectangle
                 Console.WriteLine($"Rectangle {rect.GetArea()}");
             }
-
+            //rect.Length
             //Since is does variable 
             if (shape.GetArea() is var theArea && theArea > 5)
             {
                 WriteLine($"Area is >5 {theArea}");
             }
-            
+            Console.WriteLine(theArea);
             switch (shape)
             {
                 //case Square s:

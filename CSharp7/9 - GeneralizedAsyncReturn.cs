@@ -16,6 +16,12 @@ namespace c_sharp_7.CSharp7
         //Also it can be used for sync or async code ala https://stackoverflow.com/documentation/c%23/1936/c-sharp-7-0-features/28612/valuetaskt#t=201703232043300985004
         public async Task<decimal> GetStockQuoteA<T>()
         {
+
+            if (DateTime.Now.Subtract(_lastUpdate).TotalMilliseconds < 2000)
+            {
+                return _lastQuote;
+            }
+
             //Here we ALWAYS return a full task object.
             //Requires heap allocation
             //Takes 120ns with JIT
@@ -25,7 +31,7 @@ namespace c_sharp_7.CSharp7
 
         //Requires package System.Threading.Tasks.Extensions
 
-        public async ValueTask<decimal> GetStockQuoteB<T>()
+        public async ValueTask<decimal> GetStockQuoteB()
         {
             //No heap allocation if the result is known synchronously (here it is)
             //Takes 65ns with JIT
