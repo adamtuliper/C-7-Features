@@ -14,6 +14,10 @@ namespace c_sharp_7.CSharp7._1
 
         //only C# 7.1 (change language version in advanced build settings)
         const int newAndShiny = default;
-
+        void Something()
+        {
+            int newAndShiny = default;
+            
+        }
     }
 }

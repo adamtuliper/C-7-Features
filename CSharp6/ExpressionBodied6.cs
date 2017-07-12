@@ -23,7 +23,7 @@ namespace c_sharp_7.CSharp6
             //    return $"Name: {Name}, Health: {Health}";
             //}
 
-            public override string ToString() =>  $"{Name}, {Health}";
+            public override string ToString() =>  $"Name: {Name}, Health: {Health}";
         }
     }
 }

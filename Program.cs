@@ -150,11 +150,11 @@ namespace c_sharp_7
 
             //adam
             var adam = ("adam", "m", "tuliper");
-            
             //123-44-1234
             (string firstName, string middleName, string lastName) cestMoi = adam;
 
             //If we don't care about names
+            
             (string, string, string) stringTuple = default((string tup1, string tup2, string tup3));
             stringTuple.Item1 = "Mary";
 
@@ -185,15 +185,21 @@ namespace c_sharp_7
             //     .Set(out var item8);
 
 
-
+            
             //7b. Deconstruction
             var point = new Point(5, 4);
             var (p1, p2) = point;
+            
+            //overloaded deconstruction
+            var (x1,y1,q1) = point;
+
+            //Note can't have a single value deconstruction or tuple
+            //(int aqqqq) = (5);
 
             //Deconstruction, I only want one item
             (int a10, _, _, _, _) = (1, 2, 3, 4, 5);
             var (x, _) = point;
-
+            
             //Equality - checks
 
         }
