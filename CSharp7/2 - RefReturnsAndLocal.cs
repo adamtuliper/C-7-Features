@@ -29,11 +29,11 @@ namespace c_sharp_7.CSharp7
 
     
 
-    public class RefReturnsAndOuts
+    public class RefReturnsAndLocal
     {
         private GiganticData _data;
 
-        public RefReturnsAndOuts()
+        public RefReturnsAndLocal()
         {
             _data = new GiganticData();
             _data.PlayerData.Health = 0x00110011;
@@ -57,12 +57,29 @@ namespace c_sharp_7.CSharp7
         {
 
             //EAX contains PTR when done with call (view disassembly)
+
+            //The "ref" here is the 'local' part of "Ref returns and locals"
+            //without it, you don't get a reference, but a copy. 
             ref PlayerData dataRef = ref GetPlayerData();
+
+            //Example of misuse - COPY not a reference.
+            PlayerData dataRef2 =  GetPlayerData();
+
+
             dataRef.Health = 10;
             //note disassembly - after call is done EAX contains value
             var dataNoRef = GetPlayerDataNoRef();
         }
 
+        //From docs.microsoft.com
+        public static ref int Find3(int[,] matrix, Func<int, bool> predicate)
+        {
+            for (int i = 0; i < matrix.GetLength(0); i++)
+                for (int j = 0; j < matrix.GetLength(1); j++)
+                    if (predicate(matrix[i, j]))
+                        return ref matrix[i, j];
+            throw new InvalidOperationException("Not found");
+        }
     }
 
     public struct PowerUp

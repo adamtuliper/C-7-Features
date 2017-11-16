@@ -11,6 +11,21 @@ namespace c_sharp_7.CSharp7
     public class Tupler
     {
 
+
+        /* A WARNING ***********************************
+         
+
+                Don't return tuples for public apis 
+                You can. Don't.
+
+        ************************************************/
+
+
+
+
+
+
+
         public void Tally(IEnumerable<int> values, out int sum, out int count)
         {
             sum = 1;
@@ -32,7 +47,9 @@ namespace c_sharp_7.CSharp7
         /// <summary>
         /// Azure portal URL.
         /// </summary>
-        private const string BaseUrl = "https://westus.api.cognitive.microsoft.com/";
+        //private const string BaseUrl = "https://westus.api.cognitive.microsoft.com/";
+        private const string BaseUrl = "https://westcentralus.api.cognitive.microsoft.com/";
+        
 
         /// <summary>
         /// Your account key goes here. This is for the text analytics service.
@@ -40,7 +57,7 @@ namespace c_sharp_7.CSharp7
         /// As of now, you can get keys here (though that may change location) and they can take 10 mins or so to become active
         /// https://www.microsoft.com/cognitive-services/en-us/subscriptions?displayClass=subscription-free-trials
         /// </summary>
-        private const string AccountKey = "8139a8831c13424cae1cf26a9f8efe98 ";
+        private const string AccountKey = "4196d7625e444a29a2ca08c2c4765295 ";
 
         /// <summary>
         /// Maximum number of languages to return in language detection API.
@@ -50,7 +67,6 @@ namespace c_sharp_7.CSharp7
 
         public async static Task<(string keyPhrases, string language, string sentiment)> ProcessLanguage()
         {
-
 
             //No workie - as we're not creating a,b,c, we're creating a tuple named results, hence dont need internal var
             //(var a, var b, var c) results = await MakeRequests();

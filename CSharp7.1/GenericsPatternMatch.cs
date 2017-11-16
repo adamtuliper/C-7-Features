@@ -8,7 +8,7 @@ namespace c_sharp_7.CSharp7._1
 {
     class GenericsPatternMatch
     {
-#if CSharp_71
+//#if CSharp_71
         public class Packet
         {
         }
@@ -32,7 +32,7 @@ namespace c_sharp_7.CSharp7._1
                     break;
             }
         }
-#endif
+//#endif
     }
 
 }

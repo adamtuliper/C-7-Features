@@ -14,16 +14,20 @@ namespace c_sharp_7
         public class Person
         {
             public string Name { get; set; }
+            public int Age { get; set; }
+            public string Address { get; set; }
+            public string City { get; set; }
+            public string State { get; set; }
         }
 
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
 
             //Review 1 Null Conditional
             var nullConditional = new NullConditional();
             nullConditional.PurchaseProduct();
-
-            //nifty was of checking argument length
+            
+            //nifty way of checking argument length
             switch (args?.Length)
             {
                 case 1:
@@ -53,7 +57,9 @@ namespace c_sharp_7
 
             //*****************************************************
             //2. Ref returns - pointer to a structure
-            var refReturns = new RefReturnsAndOuts();
+
+            //Cannot use with async. Compiler can't know if ref'd variable is set before it returns
+            var refReturns = new RefReturnsAndLocal();
             refReturns.TestRefs();
 
             //*****************************************************
@@ -158,10 +164,10 @@ namespace c_sharp_7
             (string, string, string) stringTuple = default((string tup1, string tup2, string tup3));
             stringTuple.Item1 = "Mary";
 
-            var task = Tupler.ProcessLanguage();
-            task.Wait();
+            var result = await Tupler.ProcessLanguage();
 
-            var result = task.Result;
+            //var result = task.Result;
+            
 
             Console.WriteLine($"{result.keyPhrases}\r\n{result.sentiment}\r\n{result.language}");
 
@@ -177,7 +183,8 @@ namespace c_sharp_7
             //can't convert dbl to float, and also a:1 - 'a' will be ignored
             //(int a1, float b1, int c20) conversions = (a: 1, 2d, 3);
 
-            var item = (num: 1f, count: 2f, name: "hello", person: new Person() { Name = "Adam" });
+
+            var item = (num: 1f, count: 2f, name: "hello", person: new Person() { Name = "Mary" });
             item.Item1 = item.Item2 * item.Item1;
 
             //Tuple.Create("item1", "item2", "item", "item", "item", "item", "item7", Tuple.Create("item 8"))
@@ -199,9 +206,10 @@ namespace c_sharp_7
             //Deconstruction, I only want one item
             (int a10, _, _, _, _) = (1, 2, 3, 4, 5);
             var (x, _) = point;
-            
-            //Equality - checks
 
+            //Equality - checks
+            var (first, address) = ("1", "2");
+            return;
         }
     }
 }

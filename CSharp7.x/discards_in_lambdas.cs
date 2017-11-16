@@ -19,6 +19,7 @@ namespace c_sharp_7.CSharp7._1
 
             list.ForEach(_ => { counter++; });
 
+
             //Now multiple _ in lambdas meaning truly "I dont care"
             //Func<int, int, int> zero = (_, _) => 0;
         }

@@ -24,13 +24,13 @@ namespace c_sharp_7.CSharp7
         {
             if (x < 0) throw new ArgumentException("Less negativity please!", nameof(x));
 
-      
+
+            //Note variables are available
+            bool processed = false;
 
             //Note this is a value on the tuple
             return Fib(x).current;
 
-            //Note variables are available
-            bool processed = false;
 
             (int current, int previous) Fib(int i)
             {

@@ -15,6 +15,10 @@ namespace c_sharp_7.CSharp7
             set => _name = value ?? throw new ArgumentNullException();
         }
 
+        public Person()
+        {
+
+        }
         //Previously we didn't support throwing exceptions on expression bodied items.
         public Person(string name) => Name = name ?? throw new ArgumentNullException(name);
 
