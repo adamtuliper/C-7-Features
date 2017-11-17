@@ -22,6 +22,9 @@ namespace c_sharp_7
 
         static async Task Main(string[] args)
         {
+            
+            var result = await Tupler.ProcessLanguage();
+
 
             //Review 1 Null Conditional
             var nullConditional = new NullConditional();
@@ -136,6 +139,8 @@ namespace c_sharp_7
             // IL_01c4: stloc.s a
             // IL_01c6: ldc.i4.2
             // IL_01c7: stloc.s b
+
+
             var (a, b, c, c1, c2) = (1, 2, 3, 4, 5);
 
             //We have variables now
@@ -150,7 +155,7 @@ namespace c_sharp_7
 
             //named
             (int p, int q, int r) theTup = (2, 3, 4);
-            
+
             theTup = (5, 6, 7);
             theTup.p = 8;
 
@@ -162,9 +167,9 @@ namespace c_sharp_7
             //If we don't care about names
             
             (string, string, string) stringTuple = default((string tup1, string tup2, string tup3));
+            
             stringTuple.Item1 = "Mary";
 
-            var result = await Tupler.ProcessLanguage();
 
             //var result = task.Result;
             
@@ -193,7 +198,8 @@ namespace c_sharp_7
 
 
             
-            //7b. Deconstruction
+
+            //8b. Deconstruction
             var point = new Point(5, 4);
             var (p1, p2) = point;
             

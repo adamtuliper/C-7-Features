@@ -21,7 +21,7 @@ namespace c_sharp_7.CSharp7._1
             var theTup = (1, 2, 3, 4, 5);
             
 
-#if CSharp_71
+#if CSharp_FUTURE
             
             //Coming..//shallow equality checking
             if (tuple1 == tuple2)

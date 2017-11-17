@@ -1,0 +1,4 @@
+﻿public ref readonly PlayerData GetPlayerData()
+
+and call is
+ref readonly PlayerData dataRef = ref GetPlayerData();

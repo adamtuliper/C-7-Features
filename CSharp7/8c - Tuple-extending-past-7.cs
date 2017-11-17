@@ -10,8 +10,14 @@ namespace c_sharp_7.CSharp7._1
     {
         public void LongTuples()
         {
+            //Let's dotpeek this.
+            //Note ildasm, element 8 over is a nested tuple declaration
+            /*
+              IL_002c:  call       instance void valuetype [System.ValueTuple]System.ValueTuple`8<int32,int32,int32,int32,int32,int32,int32,valuetype [System.ValueTuple]System.ValueTuple`5<int32,int32,int32,int32,int32>>::.ctor(!0,
+                                                                                                                                                                                                                                                !1,
+            */
             var longTuple = (1, 2, 3, 4, 5, 6, 7, 8);
-            var longerTuple = (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12);
-        }
-    }
-}
+                        var longerTuple = (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12);
+                    }
+                }
+            }

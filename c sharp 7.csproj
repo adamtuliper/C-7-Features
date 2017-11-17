@@ -23,7 +23,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <LangVersion>7.1</LangVersion>
+    <LangVersion>7.2</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -78,7 +78,7 @@
     <Compile Include="CSharp7.x\autoprop-non-fields.cs" />
     <Compile Include="CSharp7.x\discards_in_lambdas.cs" />
     <Compile Include="CSharp7.x\expression-variables-in-initializers.cs" />
-    <Compile Include="CSharp7.x\GenericsPatternMatch.cs" />
+    <Compile Include="CSharp7.1\GenericsPatternMatch.cs" />
     <Compile Include="CSharp7.x\limited-nullable-enhanced-common-type.cs" />
     <Compile Include="CSharp7.2\protected_and_internal.cs" />
     <Compile Include="CSharp7.1\target-typed-default.cs" />
@@ -95,6 +95,7 @@
     <Compile Include="CSharp7\8a - Tupler.cs" />
     <Compile Include="CSharp7\8b - Deconstruct.cs" />
     <Compile Include="CSharp7\9 - GeneralizedAsyncReturn.cs" />
+    <Compile Include="CSharp8\nullable-reference-types.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -105,6 +106,7 @@
   <ItemGroup>
     <Content Include="CSharp7.1\lang-version.txt" />
     <Content Include="CSharp7.1\ref-only.txt" />
+    <Content Include="CSharp7.2\ref readonly.txt" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
