@@ -72,7 +72,6 @@
     <Compile Include="CSharp7.1\async-main.cs" />
     <Compile Include="CSharp7.2\in_keyword.cs" />
     <Compile Include="CSharp7.2\non_trailing_named_arguments.cs" />
-    <Compile Include="CSharp7.x\Span_T.cs" />
     <Compile Include="CSharp7.2\The underscore.cs" />
     <Compile Include="CSharp7\8c - Tuple-extending-past-7.cs" />
     <Compile Include="CSharp7.x\autoprop-non-fields.cs" />
@@ -106,6 +105,7 @@
   <ItemGroup>
     <Content Include="CSharp7.1\lang-version.txt" />
     <Content Include="CSharp7.1\ref-only.txt" />
+    <Content Include="CSharp7.2\-Ships.txt" />
     <Content Include="CSharp7.2\ref readonly.txt" />
   </ItemGroup>
   <ItemGroup />

@@ -139,8 +139,7 @@ namespace c_sharp_7
             // IL_01c4: stloc.s a
             // IL_01c6: ldc.i4.2
             // IL_01c7: stloc.s b
-
-
+            
             var (a, b, c, c1, c2) = (1, 2, 3, 4, 5);
 
             //We have variables now
@@ -155,7 +154,7 @@ namespace c_sharp_7
 
             //named
             (int p, int q, int r) theTup = (2, 3, 4);
-
+            
             theTup = (5, 6, 7);
             theTup.p = 8;
 

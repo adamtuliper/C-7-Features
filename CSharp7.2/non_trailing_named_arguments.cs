@@ -17,6 +17,7 @@ namespace c_sharp_7.CSharp7._2
 
 
             //7.2 adds: missing name on argument age but proper order means now OK
+            //Ex lastname is in correct order, but don't need name. We then add address.
             FormatCustomer(firstName: "jane", "jones", 31, address: "555 Main St");
 
             //NOT ok

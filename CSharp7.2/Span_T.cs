@@ -18,7 +18,7 @@ namespace c_sharp_7.CSharp7._2
             var output = contentLength.AsSpan().Slice(15);
 
             
-
+             
         //public struct Span<T>
         //{
         //    internal IntPtr _pointer;

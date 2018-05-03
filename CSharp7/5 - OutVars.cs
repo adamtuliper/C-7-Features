@@ -18,14 +18,11 @@ namespace c_sharp_7.CSharp7
             int orderId;
             if (int.TryParse(input, out orderId)) { }
 
+           
 
-
-
-
-
-            //locally (in the function) scoped
-            //can also use: var int answer\
-            if (int.TryParse(input, out var answer))
+                //locally (in the function) scoped
+                //can also use: var int answer\
+                if (int.TryParse(input, out var answer))
             {
                 if (answer == 42)
                 {

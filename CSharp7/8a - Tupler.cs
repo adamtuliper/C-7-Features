@@ -48,7 +48,7 @@ namespace c_sharp_7.CSharp7
         /// Azure portal URL.
         /// </summary>
         //private const string BaseUrl = "https://westus.api.cognitive.microsoft.com/";
-        private const string BaseUrl = "https://westcentralus.api.cognitive.microsoft.com/";
+        private const string BaseUrl = "https://westus2.api.cognitive.microsoft.com/";
         
 
         /// <summary>
@@ -57,7 +57,7 @@ namespace c_sharp_7.CSharp7
         /// As of now, you can get keys here (though that may change location) and they can take 10 mins or so to become active
         /// https://www.microsoft.com/cognitive-services/en-us/subscriptions?displayClass=subscription-free-trials
         /// </summary>
-        private const string AccountKey = "4196d7625e444a29a2ca08c2c4765295 ";
+        private const string AccountKey = "db4ebdc1a79d4692aba4d786e8f21eaf ";
 
         /// <summary>
         /// Maximum number of languages to return in language detection API.

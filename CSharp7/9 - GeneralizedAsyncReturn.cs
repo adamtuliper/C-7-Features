@@ -14,6 +14,9 @@ namespace c_sharp_7.CSharp7
         private decimal _lastQuote;
 
         //Also it can be used for sync or async code ala https://stackoverflow.com/documentation/c%23/1936/c-sharp-7-0-features/28612/valuetaskt#t=201703232043300985004
+
+
+
         public async Task<decimal> GetStockQuoteA<T>()
         {
 

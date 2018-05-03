@@ -62,6 +62,9 @@ namespace c_sharp_7.CSharp7
             //without it, you don't get a reference, but a copy. 
             ref PlayerData dataRef = ref GetPlayerData();
 
+            //also..watch what happens when we....
+            //ref readonly PlayerData dataRef = ref GetPlayerData();
+
             //OK, unallowed if we use ref readonly
             dataRef.AntiCheatHash = 9192182181;
 

@@ -16,7 +16,7 @@ namespace c_sharp_7.CSharp7._1
             //Scenario - Figuring out the common type when between
             // *Non nullable value type T 
             // *null literal
-#if CSharp_71
+#if CSharp_7
             int? result = compare ? 1 : null;
 #endif
 

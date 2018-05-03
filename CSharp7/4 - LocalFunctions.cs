@@ -17,13 +17,14 @@ namespace c_sharp_7.CSharp7
         //   to write a function that is called only from the context of another method.
         // Lambdas? Func, Action: ref, out, pointer, or params parameters aren't supported
         //          Not valid generic, so Func<int, int> can't be used
+        //Anonymous methods - can't use params in the parameter list
+        //                    can't capture ref or out parameters of the enclosing method. 
 
-
-        //great discussion on 'cant we do something like this already'
+        //Great discussion on 'cant we do something like this already'
         //https://github.com/dotnet/roslyn/issues/259
         public static int Fibonacci(int x)
         {
-            if (x < 0) throw new ArgumentException("Less negativity please!", nameof(x));
+            if (x < 0) throw new ArgumentException("Fibonacci sequence must start with 0 or positive", nameof(x));
 
 
             //Note variables are available

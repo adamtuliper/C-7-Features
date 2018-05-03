@@ -8,7 +8,7 @@ namespace c_sharp_7.CSharp7
 {
     public class TheUnderscore
     {
-        //Note the underscores. Welcome 7.2
+        //Note the _leading_ underscores. Welcome 7.2. Works for hex/binary.
         [Flags]
         enum Colors
         {

@@ -2,3 +2,6 @@
 
 and call is
 ref readonly PlayerData dataRef = ref GetPlayerData();
+
+See
+CSharp7\2 - RefReturnsAndLocal.cs

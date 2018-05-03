@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace c_sharp_7.CSharp7._1
 {
+    //https://github.com/dotnet/csharplang/blob/master/proposals/csharp-7.3/auto-prop-field-attrs.md
     class autoprop_non_fields
     {
         [Serializable]
